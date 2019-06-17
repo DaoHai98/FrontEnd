@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<pre>
+    $(this) chỉ trực tiếp đối tượng đang bị tác động
+    khi sử dụng nó trong callback
+</pre>
+
+<div class="container" style="padding: 30px;background: orange; margin: 10px">
+    $(this) chỉ trực tiếp đối tượng đang bị tác động
+    khi sử dụng nó trong callback</div>
+
+<div class="container" style="padding: 30px;background: orange; margin: 10px">
+    $(this) chỉ trực tiếp đối tượng đang bị tác động
+    khi sử dụng nó trong callback
+</div>
+
+<div class="container" style="padding: 30px;background: orange; margin: 10px">
+    $(this) chỉ trực tiếp đối tượng đang bị tác động
+    khi sử dụng nó trong callback
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".container").mouseenter(function () {
+            $(this).css("background", "green");
+            $(this).css("font-size","30px");
+            $(this).animate({width:'100px',
+                             opacity:'10'
+            })
+        });
+        $(".container").mouseleave(function () {
+            $(this).css("background", "orange");
+            $(this).css("font-size","15px");
+
+        });
+    });
+</script>
+</body>
+</html>
